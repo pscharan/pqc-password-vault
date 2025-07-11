@@ -1,0 +1,90 @@
+# Project dependencies will be listed here
+# For now, it's empty as we are just setting up the structure.
+# Example:
+# cryptography==42.0.5
+# pqcrypto==0.1.0 # Replace with actual PQC library if one is chosen
+
+# Post-Quantum Cryptography and Zero Trust Architecture Password Vault
+# Core Framework Dependencies
+flask==3.0.0
+flask-cors==4.0.0
+flask-limiter==3.5.0
+werkzeug==3.0.1
+gunicorn==21.2.0
+sqlalchemy==2.0.36
+python-dotenv==1.0.0
+
+# Database Dependencies
+psycopg2-binary==2.9.9
+alembic==1.13.2
+
+# Authentication and Security
+passlib==1.7.4
+PyJWT==2.8.0
+bcrypt==4.2.1
+argon2-cffi==23.1.0
+webauthn==2.1.0
+fido2==1.1.3
+
+# Cryptography Dependencies
+pycryptodome==3.21.0
+liboqs-python==0.13.0
+cryptography==42.0.5
+
+# Zero Trust Architecture and Policy Engine
+opa-python-client==1.3.4
+requests==2.31.0
+
+# Dashboard and Monitoring
+streamlit==1.39.0
+pandas==2.2.2
+plotly==5.22.0
+psutil==6.0.0
+
+# Audit and Logging
+structlog==24.4.0
+python-json-logger==2.0.7
+
+# Additional Security Libraries
+tinydb==4.8.0
+
+# Development and Testing
+pytest==8.3.3
+httpx==0.27.2
+faker==33.1.0
+
+# Performance and Monitoring
+prometheus-client==0.21.0
+redis==5.1.1
+celery==5.4.0
+
+# WebAuthn and FIDO2 Support
+cbor2==5.6.2
+pycose==1.0.1
+
+# Additional Flask Extensions
+flask-sqlalchemy==3.1.1
+flask-migrate==4.0.5
+flask-jwt-extended==4.6.0
+
+# Environment and Configuration
+click==8.1.7
+itsdangerous==2.1.2
+
+# Async Support for Redis/Celery
+redis-om==0.2.1
+kombu==5.3.4
+
+# Additional Security and Validation
+email-validator==2.1.0
+phonenumbers==8.13.27
+pyotp==2.9.0
+
+# Monitoring and Metrics
+grafana-api==1.0.3
+prometheus-flask-exporter==0.23.0
+
+# Additional Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+uuid==1.30

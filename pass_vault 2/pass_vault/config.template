@@ -1,0 +1,193 @@
+# PQC-ZTA Password Vault Environment Configuration Template
+# Copy this file to .env and update the values according to your setup
+
+# =============================================================================
+# CORE APPLICATION SETTINGS
+# =============================================================================
+
+# Flask application settings
+SECRET_KEY=your-super-secret-key-change-this-in-production
+FLASK_ENV=development
+FLASK_DEBUG=true
+
+# Server configuration
+HOST=0.0.0.0
+PORT=8000
+
+# =============================================================================
+# DATABASE CONFIGURATION
+# =============================================================================
+
+# PostgreSQL database connection
+DATABASE_URL=postgresql://vault_user:vault_password@localhost:5432/vault_db
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=vault_db
+DB_USER=vault_user
+DB_PASSWORD=vault_password
+
+# =============================================================================
+# AUTHENTICATION & SECURITY
+# =============================================================================
+
+# JWT configuration
+JWT_SECRET_KEY=your-jwt-secret-key-change-this
+JWT_ACCESS_TOKEN_EXPIRES=3600
+JWT_REFRESH_TOKEN_EXPIRES=604800
+
+# WebAuthn/FIDO2 configuration
+WEBAUTHN_RP_ID=localhost
+WEBAUTHN_RP_NAME=PQC-ZTA Password Vault
+WEBAUTHN_ORIGIN=http://localhost:3000
+
+# =============================================================================
+# ZERO TRUST ARCHITECTURE
+# =============================================================================
+
+# Open Policy Agent (OPA) configuration
+OPA_URL=http://localhost:8181
+OPA_POLICY_PATH=/v1/data/vault/allow
+OPA_TIMEOUT=5.0
+
+# Risk scoring thresholds
+RISK_THRESHOLD_LOW=0.3
+RISK_THRESHOLD_MEDIUM=0.6
+RISK_THRESHOLD_HIGH=0.8
+
+# =============================================================================
+# REDIS & CACHING
+# =============================================================================
+
+# Redis configuration for sessions and caching
+REDIS_URL=redis://localhost:6379/0
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_PASSWORD=
+
+# Session configuration
+SESSION_TIMEOUT=3600
+MAX_SESSIONS_PER_USER=5
+
+# =============================================================================
+# CELERY BACKGROUND TASKS
+# =============================================================================
+
+# Celery broker configuration
+CELERY_BROKER_URL=redis://localhost:6379/1
+CELERY_RESULT_BACKEND=redis://localhost:6379/1
+
+# =============================================================================
+# POST-QUANTUM CRYPTOGRAPHY
+# =============================================================================
+
+# PQC algorithm configuration
+PQC_KEM_ALGORITHM=Kyber1024
+PQC_SIG_ALGORITHM=Dilithium3
+PQC_SPHINCS_ALGORITHM=SPHINCS+-SHA2-256f-simple
+
+# Audit logging configuration
+PQC_AUDIT_LOG_PATH=./logs/pqc_audit.log
+PQC_AUDIT_LOG_LEVEL=INFO
+PQC_AUDIT_RETENTION_DAYS=365
+
+# =============================================================================
+# FRONTEND CONFIGURATION
+# =============================================================================
+
+# Frontend application URL
+FRONTEND_URL=http://localhost:3000
+
+# CORS configuration
+CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+
+# =============================================================================
+# MONITORING & LOGGING
+# =============================================================================
+
+# Prometheus metrics
+PROMETHEUS_ENABLED=true
+PROMETHEUS_PORT=9090
+
+# Grafana dashboard
+GRAFANA_ENABLED=false
+GRAFANA_URL=http://localhost:3001
+GRAFANA_USERNAME=admin
+GRAFANA_PASSWORD=admin
+
+# Streamlit dashboard
+STREAMLIT_PORT=8501
+STREAMLIT_HOST=0.0.0.0
+
+# Log configuration
+LOG_LEVEL=INFO
+LOG_FORMAT=json
+LOG_FILE=./logs/application.log
+
+# =============================================================================
+# RATE LIMITING
+# =============================================================================
+
+# Rate limiting configuration
+RATE_LIMIT_ENABLED=true
+RATE_LIMIT_DEFAULT=1000 per hour
+RATE_LIMIT_LOGIN=10 per minute
+RATE_LIMIT_API=100 per minute
+
+# =============================================================================
+# SECURITY HEADERS
+# =============================================================================
+
+# Security headers configuration
+SECURITY_HEADERS_ENABLED=true
+CONTENT_SECURITY_POLICY=default-src 'self'
+HSTS_MAX_AGE=31536000
+
+# =============================================================================
+# DEVELOPMENT & TESTING
+# =============================================================================
+
+# Development mode settings
+DEV_MODE=true
+DEBUG_SQL=false
+TESTING=false
+
+# Test database (optional)
+TEST_DATABASE_URL=postgresql://vault_user:vault_password@localhost:5432/vault_test_db
+
+# =============================================================================
+# BACKUP & RECOVERY
+# =============================================================================
+
+# Backup configuration
+BACKUP_ENABLED=false
+BACKUP_INTERVAL=86400
+BACKUP_RETENTION=30
+BACKUP_PATH=./backups
+
+# =============================================================================
+# EXTERNAL SERVICES
+# =============================================================================
+
+# Email configuration (for notifications)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USERNAME=
+SMTP_PASSWORD=
+SMTP_USE_TLS=true
+
+# Geographic IP service (optional)
+GEOIP_ENABLED=false
+GEOIP_DATABASE_PATH=./data/GeoLite2-City.mmdb
+
+# =============================================================================
+# FEATURE FLAGS
+# =============================================================================
+
+# Feature toggles
+FEATURE_BIOMETRIC_AUTH=true
+FEATURE_DEVICE_TRACKING=true
+FEATURE_ANOMALY_DETECTION=true
+FEATURE_AUDIT_SIGNATURES=true
+FEATURE_STEP_UP_AUTH=true
+FEATURE_POLICY_ENFORCEMENT=true 
