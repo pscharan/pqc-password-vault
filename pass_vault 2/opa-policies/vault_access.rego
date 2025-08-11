@@ -1,8 +1,7 @@
 package vault.access
 
 # Import future keywords for compatibility
-import future.keywords.if
-import future.keywords.in
+import rego.v1
 
 # Default deny all access
 default allow = false
