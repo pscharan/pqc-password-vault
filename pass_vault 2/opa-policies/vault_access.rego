@@ -166,13 +166,13 @@ has_recent_successful_auth if {
     time_diff < 3600000000000  # 1 hour in nanoseconds
 }
 
-# Geographic restrictions (example - can be customized)
+# Geographic restrictions 
 allow := false if {
-    input.device_context.geolocation.country in ["CN", "KP", "IR"]
+    input.device_context.geolocation.country in ["USA", "GB"]
     reason := "Access denied from restricted geographic location"
 }
 
-# Rate limiting check (simplified)
+# Rate limiting check 
 allow := false if {
     input.user_context.access_count > 100  # per hour
     reason := "Access denied due to rate limiting"
